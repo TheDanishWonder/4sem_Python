@@ -15,7 +15,7 @@
 |Week 13<br/>23-03-2020|Webscraping Basics, Regular Expr. & Selenium|[Hand-in 9](https://github.com/TheDanishWonder/dat4sem2020spring-python/tree/master/Assignments/Week%2013%20-%20Webscraping%20Basics%2C%20Regular%20Expr.%20%26%20Selenium)|
 |Week 14<br/>30-03-2020|Feature spaces|[Hand-in 10](https://github.com/TheDanishWonder/dat4sem2020spring-python/tree/master/Assignments/Week%2014%20-%20Feature%20spaces)|
 |Week 15<br/>|PÅSKE|
-|Week 16<br/>13-04-2020|Neural Networks|NaN|
+|Week 16<br/>13-04-2020|Neural Networks|[Hand-in 11](https://github.com/TheDanishWonder/4sem_Python/tree/master/Assignments/Week%2016%20-%20Neural%20Networks)|
 |Week 17<br/>20-04-2020|Image Processing with OpenCV|NaN|
 |Week 18<br/>27-04-2020|Movement Detection|NaN|
 |Week 19<br/>04-05-2020|Exam Project period|None|
