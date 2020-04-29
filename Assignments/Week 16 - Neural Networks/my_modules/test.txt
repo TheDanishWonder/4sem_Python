@@ -1,0 +1,3 @@
+Dette er en dummy text med flere end 10 rækker.
+Der er adskillige linjeskift og mere end 20 0rd.
+Jeg skal bruge tal som 14 eller 15 for at se om skriptet: regexp_find.py virker som det skal.

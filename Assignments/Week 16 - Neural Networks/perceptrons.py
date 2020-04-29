@@ -1,0 +1,91 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np\n",
+    "import pdb\n",
+    "\n",
+    "\n",
+    "def activation_function(x):\n",
+    "    \"\"\"\n",
+    "    Step function to respond with y = 1 or -1\n",
+    "    Parameter:\n",
+    "    x: An x (numeric) value that will have a corresponding y value of 1 or -1\n",
+    "    \"\"\"\n",
+    "    if x < 0:\n",
+    "        return -1\n",
+    "    else:\n",
+    "        return 1\n",
+    "\n",
+    "def perceptron(inp, weights):\n",
+    "    \"\"\"\n",
+    "    Given a list of input (x) values and a list of weights, \n",
+    "    calculates the dot product of the 2 lists and returns 1 or -1 (fire or don't)\n",
+    "    Parameters:\n",
+    "    inp: vector of input predictors\n",
+    "    weights: vector of weights to be ajusted for precise prediction of output.\n",
+    "    \"\"\"\n",
+    "    # This is the same as the dot product np.dot(i, w)\n",
+    "    dot_product = sum([i * w for i, w in zip(inp, weights)])\n",
+    "    output = activation_function(dot_product)\n",
+    "    return output\n",
+    "\n",
+    "def pla(training_data, no_iterations=12000, eta=0.5):\n",
+    "    \"\"\"\n",
+    "    Find the proper weights to use in the perceptron based on data and target\n",
+    "    Parameters:\n",
+    "    training_data: list of vectors, as predictors zipped with a target value\n",
+    "    no_iterations: number of times to adjust the weights to get them as close as possible to the optimal number\n",
+    "    eta: the learning rate (prevent learning to go pendulum from one extreme error to the opposite)\n",
+    "    \"\"\"\n",
+    "    \n",
+    "    dim = len(training_data[0][0]) # len = 2 (petal width and height)\n",
+    "    weights =  np.random.random(dim) # error and weights (for x and y) start out as random numbers\n",
+    "    \n",
+    "    # initial_error\n",
+    "    error = np.random.random()\n",
+    "    weight_history = [np.copy(weights)]\n",
+    "\n",
+    "    for i in range(no_iterations):\n",
+    "        #pdb.set_trace()\n",
+    "        #breakpoint()\n",
+    "        inp_vec, expected_label = training_data[i % len(training_data)] # expected labels are 1 or -1\n",
+    "        perceptron_output = perceptron(inp_vec, weights) # perceptron output id a decimal between 0 and 1\n",
+    "        error = expected_label - perceptron_output       # error \n",
+    "        weights += eta * error * inp_vec # accumulate the weights\n",
+    "        weight_history.append(np.copy(weights))\n",
+    "        \n",
+    "    return weights, weight_history \n",
+    "\n",
+    "\n",
+    "if __name__ == '__main__':\n",
+    "    print('this is a utility module')"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
